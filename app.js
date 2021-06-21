@@ -8,7 +8,7 @@ const users = require("./routes/users");
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({ exposedHeaders: ["auth-token"] }));
 app.use("/api/auth", auth);
 app.use("/api/users", users);
 
